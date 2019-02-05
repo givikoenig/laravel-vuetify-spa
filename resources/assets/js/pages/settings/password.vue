@@ -26,11 +26,9 @@
           data-vv-as="password"
           hide-icon="true"
           name="password_confirmation"
-          v-validate="'required|confirmed:password'"
+          :rules="confirmPasswordRules"
         ></password-input>
-
-        <!-- <form-feedback :form="form" :text="$t('password_updated')"></form-feedback> -->
-
+         <!--<form-feedback :form="form" :text="$t('password_updated')"></form-feedback>-->
       </v-card-text>
       <v-card-actions>
         <submit-button :flat="true" :form="form" :label="$t('update')"></submit-button>
@@ -45,6 +43,10 @@ import Form from 'vform'
 export default {
   name: 'password-view',
   data: () => ({
+    confirmPasswordRules: [
+      v => !!v || 'Password is required',
+      v => v === this.password || 'Different password!!!'
+    ],
     form: new Form({
       password: '',
       password_confirmation: ''

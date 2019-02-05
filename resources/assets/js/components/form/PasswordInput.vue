@@ -60,20 +60,17 @@ export default {
       return this.eye
     }
   },
-
   data () {
     return {
       eye: true
     }
   },
-
   methods: {
     toggleVisibility () {
       this.eye = !this.eye
       this.$emit('eye', this.eye)
     }
   },
-
   watch: {
     eye () {
       this.$emit('eye', this.eye)

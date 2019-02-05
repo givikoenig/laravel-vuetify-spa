@@ -4,7 +4,9 @@
       <v-spacer></v-spacer>
       <!-- <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon> -->
       <v-toolbar-items>
-        <v-btn flat v-if="authenticated" :to="{ name: 'home' }">{{ $t('home') }}</v-btn>
+        <v-btn flat v-if="authenticated" :to="{ name: 'home' }">
+          <v-icon left>account_circle</v-icon>
+          {{ user.name }}</v-btn>
         <template v-else>
           <v-btn flat :to="{ name: 'login' }">{{ $t('login') }}</v-btn>
           <v-btn flat :to="{ name: 'register' }">{{ $t('register') }}</v-btn>
@@ -52,6 +54,7 @@ export default {
   },
 
   computed: mapGetters({
+    user: 'authUser',
     authenticated: 'authCheck'
   }),
 

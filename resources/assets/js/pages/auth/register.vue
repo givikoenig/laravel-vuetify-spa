@@ -54,9 +54,10 @@
               data-vv-as="password"
               hide-icon="true"
               name="password_confirmation"
-              v-validate="'required|confirmed:password'"
+              :rules="confirmPasswordRules"
             ></password-input>
-
+            <!--v-model="confirmPassword"-->
+            <!--v-validate="'required|confirmed:password'"-->
           </v-card-text>
 
           <v-card-actions>
@@ -79,11 +80,16 @@ export default {
   },
 
   data: () => ({
+    confirmPasswordRules: [
+      v => !!v || 'Password is required',
+      v => v === this.password || 'Different password!!!'
+    ],
     form: new Form({
       name: '',
       email: '',
       password: '',
-      password_confirmation: ''
+      password_confirmation: '',
+
     }),
     eye: true
   }),

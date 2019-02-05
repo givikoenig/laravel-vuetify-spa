@@ -39,7 +39,7 @@
               data-vv-as="password"
               hide-icon="true"
               name="password_confirmation"
-              v-validate="'required|confirmed:password'"
+              rules="confirmPasswordRules"
             ></password-input>
             
           </v-card-text>
@@ -63,6 +63,10 @@ export default {
   },
   
   data: () => ({
+    confirmPasswordRules: [
+      v => !!v || 'Password is required',
+      v => v === this.password || 'Different password!!!'
+    ],
     form: new Form({
       token: '',
       email: '',
