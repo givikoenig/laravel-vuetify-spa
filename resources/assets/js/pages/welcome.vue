@@ -27,7 +27,7 @@
               <a href="https://forge.laravel.com">Forge</a>
               <a href="https://github.com/laravel/laravel">GitHub</a>
             </div>
-            <img src="/img/v.png" alt="Vuetify.js" class="mt-5">
+            <img src="../../img/v.png" alt="Vuetify.js" class="mt-5">
             <div class="display-2 grey--text mt-5">
               Vuetify
             </div>
