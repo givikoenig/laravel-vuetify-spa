@@ -4,6 +4,9 @@
       <v-spacer></v-spacer>
       <!-- <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon> -->
       <v-toolbar-items>
+        <v-btn flat :to="{ name: 'mw' }">
+          <v-icon>tv</v-icon>
+        </v-btn>
         <v-btn flat v-if="authenticated" :to="{ name: 'home' }">
           <v-icon left>account_circle</v-icon>
           {{ user.name }}</v-btn>

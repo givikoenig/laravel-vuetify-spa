@@ -8,6 +8,10 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
 
+    <v-btn flat :to="{ name: 'mw' }">
+      <v-icon>tv</v-icon>
+    </v-btn>
+
     <!-- Authenticated -->
     <template v-if="authenticated">
       <progress-bar :show="busy"></progress-bar>
