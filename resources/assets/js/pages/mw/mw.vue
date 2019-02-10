@@ -1,11 +1,23 @@
 <template>
-  <div>
-    <v-layout>
-      ssssssssssss<br>
-      ffffffffffff<br>
-    </v-layout>
+  <v-app>
     <mw-tool-bar @toggleDrawer="mini=!mini" :drawer="drawer" :mini="mini"></mw-tool-bar>
-  </div>
+    <v-content>
+      <v-container fluid
+      >
+        <v-layout  align-center row wrap>
+            <v-flex xs12>
+                <v-card>
+                  <v-responsive :aspect-ratio="16/9">
+                    <v-card-text>
+                      This card will always be 16:9 (unless you put more stuff in it)
+                    </v-card-text>
+                  </v-responsive>
+                </v-card>
+            </v-flex>
+        </v-layout>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -32,3 +44,11 @@
     })
   }
 </script>
+
+<style scoped>
+  .rc {
+    width: 20px;
+    overflow: hidden;
+    right: 0;
+  }
+</style>

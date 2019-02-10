@@ -3,7 +3,8 @@
     <v-toolbar-side-icon @click.stop="toggleDrawer" v-if="authenticated"></v-toolbar-side-icon>
     <v-toolbar-title>
       <router-link :to="{ name: 'welcome' }" class="white--text">
-        {{ appName }}
+        <!--{{ appName }}-->
+        App
       </router-link>
     </v-toolbar-title>
     <v-spacer></v-spacer>
@@ -24,6 +25,7 @@
       <v-btn flat :to="{ name: 'login' }">{{ $t('login') }}</v-btn>
       <v-btn flat :to="{ name: 'register' }">{{ $t('register') }}</v-btn>
     </template>
+
   </v-toolbar>
 </template>
 

@@ -41,6 +41,9 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'profile-view',
+  metaInfo () {
+    return { title: this.$t('profile') }
+  },
   data: () => ({
     form: new Form({
       name: '',

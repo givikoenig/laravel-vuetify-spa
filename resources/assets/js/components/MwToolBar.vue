@@ -5,6 +5,7 @@
       :mini-variant.sync="mini"
       fixed
       right
+      app
     >
       <v-toolbar flat class="transparent">
         <v-list class="pa-0">
@@ -30,15 +31,15 @@
 
         <!-- Authenticated -->
         <template v-if="authenticated">
-          <router-link tag="v-list-tile" :to="{name: 'welcome'}">
+          <v-list-tile @click="goWelcome">
             <v-list-tile-action>
               <v-icon>home</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ appName }}</v-list-tile-title>
             </v-list-tile-content>
-          </router-link>
-          <v-list-tile :to="{name: 'settings.profile'}">
+          </v-list-tile>
+          <v-list-tile @click="goProfile">
             <v-list-tile-action>
               <v-icon>dashboard</v-icon>
             </v-list-tile-action>
@@ -58,15 +59,15 @@
 
         <!-- Guest -->
         <template v-else>
-          <router-link tag="v-list-tile" :to="{name: 'welcome'}">
+          <v-list-tile @click="goWelcome">
             <v-list-tile-action>
               <v-icon>home</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ appName }}</v-list-tile-title>
             </v-list-tile-content>
-          </router-link>
-          <v-list-tile :to="{name: 'login'}">
+          </v-list-tile>
+          <v-list-tile @click="goLogin">
             <v-list-tile-action>
               <v-icon>lock</v-icon>
             </v-list-tile-action>
@@ -74,7 +75,7 @@
               <v-list-tile-title>Login</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
-          <v-list-tile :to="{name: 'register'}">
+          <v-list-tile @click="goRegister">
             <v-list-tile-action>
               <v-icon>face</v-icon>
             </v-list-tile-action>
@@ -90,7 +91,6 @@
 
     </v-navigation-drawer>
   </v-layout>
-
 </template>
 
 <script>
@@ -111,6 +111,7 @@ import { mapGetters } from 'vuex'
     data: () => ({
       appName: window.config.appName,
       busy: false,
+      path: ''
     }),
 
     computed: mapGetters({
@@ -119,6 +120,18 @@ import { mapGetters } from 'vuex'
     }),
 
     methods: {
+      goWelcome () {
+        this.$router.push({name: 'welcome'})
+      },
+      goProfile () {
+        this.$router.push({name: 'settings.profile'})
+      },
+      goLogin () {
+        this.$router.push({name: 'login'})
+      },
+      goRegister () {
+        this.$router.push({name: 'register'})
+      },
       toggleDrawer () {
         this.$emit('toggleDrawer')
       },

@@ -53,7 +53,7 @@ export default {
   layout: 'default',
 
   metaInfo () {
-    return { title: this.$t('home') }
+    return { title: this.$t('welcome')}
   },
 
   computed: mapGetters({
