@@ -2,8 +2,8 @@
   <v-app light>
     <v-navigation-drawer 
       v-if="authenticated" 
-      persistent 
-      v-model="drawer" 
+      persistent
+      v-model="drawer"
       enable-resize-watcher 
       app
     >

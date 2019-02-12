@@ -12,6 +12,7 @@
     <v-btn flat :to="{ name: 'mw' }">
       <v-icon>tv</v-icon>
     </v-btn>
+    <v-btn flat :to="{ name: 'layout' }">Tests</v-btn>
 
     <!-- Authenticated -->
     <template v-if="authenticated">

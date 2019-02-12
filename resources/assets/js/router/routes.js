@@ -8,10 +8,12 @@ export default ({ authGuard, guestGuard }) => [
     { path: '/settings',
       component: require('~/pages/settings/index.vue'),
       children: [
-      { path: '', redirect: { name: 'settings.profile' } },
-      { path: 'profile', name: 'settings.profile', component: require('~/pages/settings/profile.vue') },
-      { path: 'password', name: 'settings.password', component: require('~/pages/settings/password.vue') }
-      ] }
+        { path: '', redirect: { name: 'settings.profile' } },
+        { path: 'profile', name: 'settings.profile', component: require('~/pages/settings/profile.vue') },
+        { path: 'password', name: 'settings.password', component: require('~/pages/settings/password.vue') }
+      ]},
+    { path: '/layout', name: 'layout', component: require('~/pages/tests/layout.vue') },
+    { path: '/offset', name: 'offset', component: require('~/pages/tests/offset.vue') }
   ]),
 
   // Guest routes.
