@@ -10,10 +10,12 @@
     >
     <test-menu></test-menu>
     </v-navigation-drawer>
-
+    <test-tool-bar v-on:toggleDrawer="drawer = !drawer" :drawer="drawer"></test-tool-bar>
     <v-content>
       <v-container fluid class="mt-3">
-        <router-view v-on:toggleDrawer="drawer = !drawer" :drawer="drawer"></router-view>
+        <transition name="page" mode="out-in">
+          <router-view v-on:toggleDrawer="drawer = !drawer" :drawer="drawer"></router-view>
+        </transition>
       </v-container>
     </v-content>
   </v-app>
@@ -23,6 +25,7 @@
   import {mapGetters} from 'vuex'
 
   import TestMenu from '~/components/TestMenu'
+  import TestToolBar from '~/components/TestToolBar'
 
   export default {
     computed: mapGetters({
@@ -30,7 +33,8 @@
     }),
 
     components: {
-      TestMenu
+      TestMenu,
+      TestToolBar
     },
 
     data () {

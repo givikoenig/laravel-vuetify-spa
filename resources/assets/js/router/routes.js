@@ -13,7 +13,8 @@ export default ({ authGuard, guestGuard }) => [
         { path: 'password', name: 'settings.password', component: require('~/pages/settings/password.vue') }
       ]},
     { path: '/layout', name: 'layout', component: require('~/pages/tests/layout.vue') },
-    { path: '/offset', name: 'offset', component: require('~/pages/tests/offset.vue') }
+    { path: '/offset', name: 'offset', component: require('~/pages/tests/offset.vue') },
+    { path: '/order', name: 'order', component: require('~/pages/tests/order.vue') }
   ]),
 
   // Guest routes.

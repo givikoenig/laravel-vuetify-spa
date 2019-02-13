@@ -1,11 +1,6 @@
 <template>
   <v-container grid-list-md text-xs-center>
     <h2 class="font-weight-thin text-uppercase">Offsets</h2>
-    <v-btn fab small dark color="brown darken-3" class="toggle-drawer" @click.stop="toggleDrawer">
-      <v-icon dark v-if="drawer">chevron_right</v-icon>
-      <v-icon dark v-else>chevron_left</v-icon>
-    </v-btn>
-
 
     <v-layout row wrap>
       <v-flex xs10 offset-xs1>
@@ -35,34 +30,12 @@
 </template>
 
 <script>
-
   export default {
     name: 'test-offset-vew',
     layout: 'test',
-    props: {
-      drawer: {
-        type: Boolean,
-        required: true
-      }
-    },
-
-    methods: {
-      toggleDrawer () {
-        this.$emit('toggleDrawer')
-      }
-    },
+    data () {
+      return {}
+    }
   }
 </script>
 
-<style scoped>
-  .toggle-drawer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-  .item {
-    min-height: 50px;
-    min-width: 80px;
-    margin: 10px;
-  }
-</style>
