@@ -14,7 +14,9 @@ export default ({ authGuard, guestGuard }) => [
       ]},
     { path: '/layout', name: 'layout', component: require('~/pages/tests/layout.vue') },
     { path: '/offset', name: 'offset', component: require('~/pages/tests/offset.vue') },
-    { path: '/order', name: 'order', component: require('~/pages/tests/order.vue') }
+    { path: '/order', name: 'order', component: require('~/pages/tests/order.vue') },
+    { path: '/direction', name: 'direction', component: require('~/pages/tests/direction.vue') },
+    { path: '/breakpoints', name: 'breakpoints', component: require('~/pages/tests/breakpoints.vue') }
   ]),
 
   // Guest routes.

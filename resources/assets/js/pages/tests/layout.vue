@@ -1,47 +1,63 @@
 <template>
-  <v-container grid-list-md text-xs-center>
-    <h2 class="font-weight-thin text-uppercase">Layout grid system</h2>
+  <div>
+    <v-container grid-list-md text-xs-center>
+      <h2 class="font-weight-thin text-uppercase">Layout grid system</h2>
 
-    <v-layout row wrap mt-4>
-      <v-flex xs12>
-        <v-card dark color="primary">
-          <v-card-text>12</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex v-for="i in 2" :key="`6${i}`" xs6>
-        <v-card dark color="blue lighten-2">
-          <v-card-text>6</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex v-for="i of 3" :key="`4${i}`" xs4>
-        <v-card dark color="primary">
-          <v-card-text>4</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex v-for="i of 4" :key="`3${i}`" xs3>
-        <v-card dark color="blue lighten-2" >
-          <v-card-text>3</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex v-for="i of 6" :key="`2${i}`" xs2>
-        <v-card dark color="primary">
-          <v-card-text>2</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex v-for="i of 12" :key="`${i}`" xs1>
-        <v-card dark color="blue lighten-2">
-          <v-card-text>1</v-card-text>
-        </v-card>
-      </v-flex>
-    </v-layout>
+      <v-layout row wrap mt-4>
+        <v-flex xs12>
+          <v-card dark color="primary">
+            <v-card-text>12</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex v-for="i in 2" :key="`6${i}`" xs6>
+          <v-card dark color="blue lighten-2">
+            <v-card-text>6</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex v-for="i of 3" :key="`4${i}`" xs4>
+          <v-card dark color="primary">
+            <v-card-text>4</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex v-for="i of 4" :key="`3${i}`" xs3>
+          <v-card dark color="blue lighten-2" >
+            <v-card-text>3</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex v-for="i of 6" :key="`2${i}`" xs2>
+          <v-card dark color="primary">
+            <v-card-text>2</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex v-for="i of 12" :key="`${i}`" xs1>
+          <v-card dark color="blue lighten-2">
+            <v-card-text>1</v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
 
-    <v-layout align-center justify-center column>
-      <div class="item elevation-5"></div>
-      <div class="item elevation-5"></div>
-      <div class="item elevation-5"></div>
-    </v-layout>
+      <v-layout align-center justify-center column>
+        <div class="item elevation-5"></div>
+        <div class="item elevation-5"></div>
+        <div class="item elevation-5"></div>
+      </v-layout>
 
-  </v-container>
+    </v-container>
+
+    <v-container my-3>
+      <v-layout align-center justify-center row>
+        <v-flex xs12>
+          <v-card dark tile flat>
+            <v-btn dark flat class="underlined">Template</v-btn>
+            <v-card-text >
+              <highlight-code lang="vue">{{ code }}</highlight-code>
+            </v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
+
+  </div>
 </template>
 
   <script>
@@ -49,7 +65,53 @@
       name: 'test-layout-vew',
       layout: 'test',
       data () {
-        return {}
+        return {
+          code: `<template>
+    <v-container grid-list-md text-xs-center>
+      <h2 class="font-weight-thin text-uppercase">Layout grid system</h2>
+
+      <v-layout row wrap mt-4>
+        <v-flex xs12>
+          <v-card dark color="primary">
+            <v-card-text>12</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex v-for="i in 2" :key="\`6\${i}\`" xs6>
+          <v-card dark color="blue lighten-2">
+            <v-card-text>6</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex v-for="i of 3" :key="\`4\${i}\`" xs4>
+          <v-card dark color="primary">
+            <v-card-text>4</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex v-for="i of 4" :key="\`3\${i}\`" xs3>
+          <v-card dark color="blue lighten-2" >
+            <v-card-text>3</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex v-for="i of 6" :key="\`2\${i}\`" xs2>
+          <v-card dark color="primary">
+            <v-card-text>2</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex v-for="i of 12" :key="\`\${i}\`" xs1>
+          <v-card dark color="blue lighten-2">
+            <v-card-text>1</v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
+
+      <v-layout align-center justify-center column>
+        <div class="item elevation-5"></div>
+        <div class="item elevation-5"></div>
+        <div class="item elevation-5"></div>
+      </v-layout>
+
+    </v-container>
+</template>`
+        }
       }
     }
   </script>

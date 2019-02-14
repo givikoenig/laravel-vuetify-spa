@@ -62,6 +62,8 @@
             { title: 'Layout grid system', icon: 'grid_on', route: { name: 'layout' } },
             { title: 'Offsets', icon: 'line_style', route: { name: 'offset' } },
             { title: 'Order', icon: 'format_line_spacing', route: { name: 'order' } },
+            { title: 'Direction and Align', icon: 'directions', route: { name: 'direction' } },
+            { title: 'Row&Column breakpoints', icon: 'border_clear', route: { name: 'breakpoints' } },
           ]
         }
       }

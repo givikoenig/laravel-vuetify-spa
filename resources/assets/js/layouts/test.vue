@@ -5,7 +5,7 @@
       v-if="authenticated"
       persistent
       v-model="drawer"
-      right
+      width="350"
       app
     >
     <test-menu></test-menu>
@@ -39,7 +39,7 @@
 
     data () {
       return {
-        drawer: false
+        drawer: true
       }
     }
   }
